@@ -1,0 +1,914 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="10.5">
+  <Nodes>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="54" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="1" />
+          <Fields>
+            <Field name="Location" />
+            <Field name="Long" />
+            <Field name="Lat" />
+          </Fields>
+          <Data>
+            <r>
+              <c>Twitter</c>
+              <c>-122.416405</c>
+              <c>37.776790</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Twitter HQ in SanFran Bay</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+        <Position x="162" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields fieldX="Long" fieldY="Lat" />
+          <Mode>Double</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create a Spatial Point of Twitter HQ</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="270" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_7872_ab98a75271f3403a9b7dcb34fb38187f_\Engine_12608_adcf8952463e477ab76cd3af66a782ee_.yxdb</TempFile>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Map</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv</File>
+          <FormatSpecificOptions>
+            <CodePage>28591</CodePage>
+            <Delimeter>,</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>pokemonSpawns.csv</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="s2_id" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="V_String" />
+            <Field name="s2_token" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="V_String" />
+            <Field name="num" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="V_String" />
+            <Field name="name" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="V_String" />
+            <Field name="lat" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="V_String" />
+            <Field name="lng" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="V_String" />
+            <Field name="encounter_ms" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="V_String" />
+            <Field name="disppear_ms" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="29">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="174" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Name" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="name" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="Right_name" selected="False" rename="Right_name" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Join Datasets by Pokemon Name</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="402" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="__" selected="True" rename="refID" />
+            <SelectField field="Sp__Atk" selected="True" rename="specialAttack" />
+            <SelectField field="Sp__Def" selected="True" rename="specialDefence" />
+            <SelectField field="s2_id" selected="False" />
+            <SelectField field="s2_token" selected="False" />
+            <SelectField field="lat" selected="True" rename="latitude" />
+            <SelectField field="lng" selected="True" rename="longtitude" />
+            <SelectField field="encounter_ms" selected="True" rename="spawnTime" />
+            <SelectField field="disppear_ms" selected="True" rename="despawnTime" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Rename Variables</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AutoField.AutoField">
+        <Position x="282" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields>
+            <Field field="__" selected="True" />
+            <Field field="Name" selected="True" />
+            <Field field="Type_1" selected="True" />
+            <Field field="Type_2" selected="True" />
+            <Field field="Total" selected="True" />
+            <Field field="HP" selected="True" />
+            <Field field="Attack" selected="True" />
+            <Field field="Defense" selected="True" />
+            <Field field="Sp__Atk" selected="True" />
+            <Field field="Sp__Def" selected="True" />
+            <Field field="Speed" selected="True" />
+            <Field field="Generation" selected="True" />
+            <Field field="Legendary" selected="True" />
+            <Field field="s2_id" selected="True" />
+            <Field field="s2_token" selected="True" />
+            <Field field="num" selected="True" />
+            <Field field="lat" selected="True" />
+            <Field field="lng" selected="True" />
+            <Field field="encounter_ms" selected="True" />
+            <Field field="disppear_ms" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </Fields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Automatically Set Field Type</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="__" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Byte" />
+            <Field name="Name" size="10" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="String" />
+            <Field name="Type_1" size="8" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="String" />
+            <Field name="Type_2" size="8" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="String" />
+            <Field name="Total" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Int16" />
+            <Field name="HP" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Byte" />
+            <Field name="Attack" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Byte" />
+            <Field name="Defense" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Byte" />
+            <Field name="Sp__Atk" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Byte" />
+            <Field name="Sp__Def" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Byte" />
+            <Field name="Speed" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Byte" />
+            <Field name="Generation" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Byte" />
+            <Field name="Legendary" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="Bool" />
+            <Field name="s2_id" size="20" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="String" />
+            <Field name="s2_token" size="11" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="String" />
+            <Field name="num" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="Byte" />
+            <Field name="lat" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="Double" />
+            <Field name="lng" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="Double" />
+            <Field name="encounter_ms" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="Int64" />
+            <Field name="disppear_ms" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonSpawns.csv" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAutoField" />
+    </Node>
+    <Node ToolID="49">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.CreatePoints.CreatePoints">
+        <Position x="522" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Fields fieldX="longtitude" fieldY="latitude" />
+          <Mode>Double</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create Spatial Points of Pokemon Spawns</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxCreatePoints" />
+    </Node>
+    <Node ToolID="50">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.FindNearest.FindNearest">
+        <Position x="642" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Target SpatialObj="Centroid" />
+          <Universe SpatialObj="Centroid" />
+          <HowMany value="1" />
+          <MaxDistance value="2" />
+          <MaxDistanceUnits>Miles</MaxDistanceUnits>
+          <Ignore0 value="False" />
+          <DriveTimeDataSet>Latest</DriveTimeDataSet>
+          <SelectConfiguration>
+            <Configuration outputConnection="Matched">
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="Universe_Centroid" selected="True" rename="Universe_Centroid" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Match Pokemon Spawns within 2 Miles of Twitter HQ</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxFindNearest" />
+    </Node>
+    <Node ToolID="51">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="750" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Field>Direction</Field>
+            <Operator>=</Operator>
+            <Operands>
+              <Operand>NW</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Isolate Pokemon Spawns in an NWesterly Direction of Twitter HQ</AnnotationText>
+          <DefaultAnnotationText>[Direction] = "NW"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings>
+        <Position x="858" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="FrequencyFields">&lt;Field field="Name" selected="True" /&gt;&lt;Field field="*Unknown" selected="False" /&gt;</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Calculate frequency of spawns</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Frequency.yxmc" />
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="954" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Field>Frequency</Field>
+            <Operator>&lt;=</Operator>
+            <Operands>
+              <Operand>30</Operand>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Isolate Pokemon with &lt;= 30 Spawns</AnnotationText>
+          <DefaultAnnotationText>[Frequency] &lt;= 30</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="65">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1074" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Field_Value" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Name" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="Left_Field_Name" selected="False" />
+                <SelectField field="Left_Field_Value" selected="False" />
+                <SelectField field="Left_Frequency" selected="False" />
+                <SelectField field="Left_Percent" selected="False" />
+                <SelectField field="Left_Cumulative Frequency" selected="False" />
+                <SelectField field="Left_Cumulative Percent" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Use Join to Rule Apply Filter to Dataset</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="86">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.TradeArea.TradeArea">
+        <Position x="1290" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SpatialObj field="Centroid" includeOut="True" />
+          <Units units="Miles" noOverlap="False" />
+          <Radius_FromField value="False" />
+          <Radii>0.5</Radii>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create Half-Mile Radi</AnnotationText>
+          <DefaultAnnotationText>0.5 Miles</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxTradeArea" />
+    </Node>
+    <Node ToolID="88">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.ReportMap.ReportMap">
+        <Position x="1410" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TemporaryFileLocationXML>C:\ProgramData\Alteryx\Engine\Engine_7872_ab98a75271f3403a9b7dcb34fb38187f_\Engine_12608_1753bb2d33534662867a7c0dec867f00_.xml</TemporaryFileLocationXML>
+          <IsMetric value="False" />
+          <ImageWidth>8</ImageWidth>
+          <ImageHeight>6</ImageHeight>
+          <ImageResolution>1</ImageResolution>
+          <ReferenceMap>Latest:CloudMade</ReferenceMap>
+          <BackgroundColor>#fdfeff</BackgroundColor>
+          <DropShadow>False</DropShadow>
+          <ScaleUnits>Miles</ScaleUnits>
+          <ExpandExtent>10</ExpandExtent>
+          <MinimumWidth>0.5</MinimumWidth>
+          <DataConnections>
+            <DataConnection name="#1">
+              <ConnectionType>IncomingConnection</ConnectionType>
+              <Connection>#1</Connection>
+            </DataConnection>
+          </DataConnections>
+          <Layers>
+            <Layer name="Base Layers - Points" order="0">
+              <DisplayName>Base Layers - Points</DisplayName>
+              <DataConnection />
+              <LayerType>Placeholder</LayerType>
+              <ShowLabel value="False" />
+            </Layer>
+            <Layer name="Base Layers - Lines" order="1">
+              <DisplayName>Base Layers - Lines</DisplayName>
+              <DataConnection />
+              <LayerType>Placeholder</LayerType>
+              <ShowLabel value="False" />
+            </Layer>
+            <Layer name="Base Layers - Polygons" order="2">
+              <DisplayName>Base Layers - Polygons</DisplayName>
+              <DataConnection />
+              <LayerType>Placeholder</LayerType>
+              <ShowLabel value="False" />
+            </Layer>
+          </Layers>
+          <Legend>
+            <LegendStyle Position="Right" UseCommaSeparators="false" />
+          </Legend>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Build a Map of our Target Area</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxReportMap" />
+    </Node>
+    <Node ToolID="90">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Unique.Unique">
+        <Position x="1290" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UniqueFields>
+            <Field field="Name" />
+          </UniqueFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>List Unique Pokemon in our Dataset</AnnotationText>
+          <DefaultAnnotationText>Unique: Name</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnique" />
+    </Node>
+    <Node ToolID="91">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1410" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="Name" selected="True" />
+            <SelectField field="Type_1" selected="True" />
+            <SelectField field="Type_2" selected="True" />
+            <SelectField field="Total" selected="True" />
+            <SelectField field="HP" selected="True" />
+            <SelectField field="Attack" selected="True" />
+            <SelectField field="Defense" selected="True" />
+            <SelectField field="specialAttack" selected="True" />
+            <SelectField field="specialDefence" selected="True" />
+            <SelectField field="Speed" selected="True" />
+            <SelectField field="Generation" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Deselect Unwanted Variables</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="83">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1302" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_7872_ab98a75271f3403a9b7dcb34fb38187f_\Engine_12608_c2814cf97eea445d9ef506c049e6ad0f_.yxdb</TempFile>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="82">
+      <GuiSettings>
+        <Position x="1182" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="select.x">Attack</Value>
+          <Value name="select.y">Defense</Value>
+          <Value name="bandwidth">Auto</Value>
+          <Value name="grid.points">25</Value>
+          <Value name="plot.title">Heat Plot</Value>
+          <Value name="horizontal.field" />
+          <Value name="vertical.field" />
+          <Value name="col.func">my.topo.colors</Value>
+          <Value name="nlevels">100</Value>
+          <Value name="ordered.categories">False</Value>
+          <Value name="x.labels" />
+          <Value name="y.labels" />
+          <Value name="plot.key">False</Value>
+          <Value name="key.title">Density</Value>
+          <Value name="key.labels" />
+          <Value name="inches">True</Value>
+          <Value name="in.w">5.50</Value>
+          <Value name="in.h">5.50</Value>
+          <Value name="centimeters">False</Value>
+          <Value name="cm.w">13.00</Value>
+          <Value name="cm.h">14.95</Value>
+          <Value name="graph.resolution">1x</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Compare Attack and Defense Stats</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Predictive Tools\Heat_Plot.yxmc" />
+    </Node>
+    <Node ToolID="92">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+        <Position x="1506" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TableMode>Basic</TableMode>
+          <GroupingFields orderChanged="False" />
+          <Width>100%</Width>
+          <ShowHeader value="True" />
+          <ShowBarGraph value="False" />
+          <TableFields orderChanged="False">
+            <Field name="Name" selected="True" Alignment="Left" />
+            <Field name="Type_1" selected="True" Alignment="Left" />
+            <Field name="Type_2" selected="True" Alignment="Left" />
+            <Field name="Total" selected="True" Alignment="Right" />
+            <Field name="HP" selected="True" Alignment="Right" />
+            <Field name="Attack" selected="True" Alignment="Right" />
+            <Field name="Defense" selected="True" Alignment="Right" />
+            <Field name="specialAttack" selected="True" Alignment="Right" />
+            <Field name="specialDefence" selected="True" Alignment="Right" />
+            <Field name="Speed" selected="True" Alignment="Right" />
+            <Field name="Generation" selected="True" Alignment="Right" />
+            <Field name="*Unknown" selected="True" Alignment="Right" />
+          </TableFields>
+          <TableStyles>
+            <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+            <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+            <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+            <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+          </TableStyles>
+          <StyleRules />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create Table of Pokemon Stats</AnnotationText>
+          <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+    </Node>
+    <Node ToolID="93">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1626" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Union Report Snippets</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerLayout.PortfolioComposerLayout">
+        <Position x="1722" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupingMode>PerRecord</GroupingMode>
+          <PreserveSourceFields value="False" />
+          <Orientation>H</Orientation>
+          <Separator>Continuous</Separator>
+          <Width>100%</Width>
+          <Height />
+          <BorderStyle Enabled="false" Color="#000000" Width="2" />
+          <SeparatorStyle Enabled="false" Color="#000000" Width="1" />
+          <Padding>0</Padding>
+          <LayoutFields orderChanged="False">
+            <Field name="Table" selected="True" Alignment="Center" />
+            <Field name="Map" selected="True" Alignment="Center" />
+          </LayoutFields>
+          <MergeIntoTable value="False" />
+          <SectionNameForGroup />
+          <SectionNameForAllRecords />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create a Horizontal Layout</AnnotationText>
+          <DefaultAnnotationText>Horizontal Layout
+Each Individual Record</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerLayoutPlugin" />
+    </Node>
+    <Node ToolID="99">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1854" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_7872_ab98a75271f3403a9b7dcb34fb38187f_\Engine_12608_ffac5c44f6884e97a6ca7db3414ed7d5_.yxdb</TempFile>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Map>
+                  <BaseMap>[No Base Map]</BaseMap>
+                </Map>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="2" SearchSubDirs="False" RecordLimit="">C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf</File>
+          <FormatSpecificOptions>
+            <AllStrings>False</AllStrings>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>pokemonStats.dbf</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="__" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Name" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Type_1" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Type_2" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Total" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="HP" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Attack" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Defense" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Sp__Atk" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Sp__Def" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Speed" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Generation" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+            <Field name="Legendary" size="254" source="File: C:\Users\philbudden\OneDrive for Business\myDocs\talks\sqlRelayAlteryxTalkCardiff2016\demo\pokemonStats.dbf" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="84">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1170" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Attack] &gt; 40 and
+[Defense] &gt; 50</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Isolate Pokemon with Greater than 40 Attack and Greater than 50 Defense</AnnotationText>
+          <DefaultAnnotationText>[Attack] &gt; 40 and
+[Defense] &gt; 50</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="50" Connection="Universe" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="50" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="29" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="29" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="29" Connection="Join" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="46" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="46" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Matched" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="51" Connection="True" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="51" Connection="True" />
+      <Destination ToolID="65" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="64" Connection="True" />
+      <Destination ToolID="65" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="63" Connection="Data" />
+      <Destination ToolID="64" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Join" />
+      <Destination ToolID="82" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="65" Connection="Join" />
+      <Destination ToolID="84" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="86" Connection="Output" />
+      <Destination ToolID="88" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="88" Connection="Output" />
+      <Destination ToolID="93" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="92" Connection="Output" />
+      <Destination ToolID="93" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="90" Connection="Unique" />
+      <Destination ToolID="91" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="91" Connection="Output" />
+      <Destination ToolID="92" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="82" Connection="Output" />
+      <Destination ToolID="83" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="93" Connection="Output" />
+      <Destination ToolID="98" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="Output" />
+      <Destination ToolID="99" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="84" Connection="True" />
+      <Destination ToolID="86" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="84" Connection="True" />
+      <Destination ToolID="90" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>demoWorkflow</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
